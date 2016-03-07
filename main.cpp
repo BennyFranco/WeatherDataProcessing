@@ -1,105 +1,54 @@
-#include <fstream>
-#include <iostream>
-#include <sstream>
-#include <vector>
+#include <gtk/gtk.h>
+#include "TextFileProcessor.h"
 
-#include <bsoncxx/builder/stream/document.hpp>
-#include <bsoncxx/json.hpp>
+static void startTransform (GtkWidget *widget, gpointer   data) {
+    TextFileProcessor* transformer = new TextFileProcessor("mongodb://127.0.0.1/ClimaPIEAES?","ClimaPIEAES","JAZMIN","../../data/Jazmin/20150201.txt");
+    transformer->transformTextFile();
+    g_print ("Info saved\n");
+}
 
-#include <mongocxx/client.hpp>
-#include <mongocxx/instance.hpp>
-
-using namespace std;
-
-int main() {
-
-    mongocxx::instance inst{};
-    mongocxx::client conn{mongocxx::uri{"mongodb://127.0.0.1/ClimaPIEAES?"}};
-
-    auto collection = conn["ClimaPIEAES"]["JAZMIN"];
-
-    string headerLine;
-    bool isFirstLine=true;
-
-    vector<string> headersVector;
-    vector<string> dataLineVector;
-
-    //vector<string>::const_iterator i;
-    vector<string>::const_iterator j;
-    vector<string>::const_iterator k;
-
-    ifstream inFile("../../data/Jazmin/20150201.txt");
+int main(int argc, char **argv) {
+    GtkWidget *window;
+    GtkWidget *button;
 
 
-    if (!inFile) {
-        cerr << "File not found." << endl;
-        return -1;
-    }
+    gtk_init (&argc, &argv);
+    /* create a new window, and set its title */
+    window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+    gtk_window_set_title (GTK_WINDOW (window), "Weather Data Processor");
 
-    // Using getline() to read one line at a time.
-    string line;
-    while (getline(inFile, line)) {
-        if (line.empty()) continue;
-        if(isFirstLine){
-            headerLine = line;
-            isFirstLine=false;
-        }else {
-            dataLineVector.push_back(line);
-        }
-    }
+    g_signal_connect (window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
 
-    inFile.close();
+    /* Sets the border width of the window. */
+    gtk_container_set_border_width (GTK_CONTAINER (window), 10);
 
+    /* Creates a new button with the label "Hello World". */
+    button = gtk_button_new_with_label ("Transform and insert INFO");
 
-    string delimiter = ",";
-    size_t pos = 0;
-    string token;
-    while ((pos = headerLine.find(delimiter)) != string::npos) {
-        token = headerLine.substr(0, pos);
-        token.replace(token.begin(),token.begin()+1,"");
-        token.replace(token.end()-1,token.end(),"");
-        headerLine.erase(0, pos + delimiter.length());
-        headersVector.push_back(token);
-    }
-    headerLine.replace(headerLine.begin(),headerLine.begin()+1,"");
-    headerLine.replace(headerLine.end()-1,headerLine.end(),"");
-    headerLine.replace(headerLine.end()-1,headerLine.end(),"");
-    headersVector.push_back(headerLine);
+     /* When the button receives the "clicked" signal, it will call the
+      * function print_hello() passing it NULL as its argument.
+      *
+      * The print_hello() function is defined above.
+      */
+    g_signal_connect (button, "clicked", G_CALLBACK (startTransform), NULL);
 
-        for(j=dataLineVector.begin(); j!=dataLineVector.end(); ++j){
-            string temp = (*j);
-            vector<string> dataTempVector;
-            while ((pos = temp.find(delimiter)) != string::npos) {
-                token = temp.substr(0, pos);
-                temp.erase(0, pos + delimiter.length());
-                token.replace(token.begin(),token.begin()+1,"");
-                token.replace(token.end()-1,token.end(),"");
-                dataTempVector.push_back(token);
-            }
+    /* The g_signal_connect_swapped() function will connect the "clicked" signal
+   * of the button to the gtk_widget_destroy() function; instead of calling it
+   * using the button as its argument, it will swap it with the user data
+   * argument. This will cause the window to be destroyed by calling
+   * gtk_widget_destroy() on the window.
+   */
+    g_signal_connect_swapped (button, "clicked", G_CALLBACK (gtk_widget_destroy), window);
 
-            temp.replace(temp.begin(),temp.begin()+1,"");
-            temp.replace(temp.end()-1,temp.end(),"");
-            temp.replace(temp.end()-1,temp.end(),"");
-            dataTempVector.push_back(temp);
+    /* This packs the button into the window. A GtkWindow inherits from GtkBin,
+   * which is a special container that can only have one child
+   */
+    gtk_container_add (GTK_CONTAINER (window), button);
 
-            /*for(i=headersVector.begin(),k=dataTempVector.begin(); k!=dataTempVector.end(); ++i,++k) {
-                document << headersVector.at(k) << (*k);
-            }*/
-
-            bsoncxx::builder::stream::document document{};
-
-            for(std::size_t i=0;i<dataTempVector.size();++i){
-                document << headersVector[i] << dataTempVector[i];
-            }
-            collection.insert_one(document.view());
-        }
-
-    //cout << headersVector.size() << endl;
-    auto cursor = collection.find({});
-
-    for (auto&& doc : cursor) {
-        std::cout << bsoncxx::to_json(doc) << std::endl;
-    }
+    /* The final step is to display this newly created widget... */
+    gtk_widget_show (button);
+    gtk_widget_show (window);
+    gtk_main ();
 
     return 0;
 }
