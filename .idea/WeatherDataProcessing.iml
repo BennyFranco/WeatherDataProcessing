@@ -20,14 +20,16 @@
       <sourceFolder url="file://$MODULE_DIR$/model/Station.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/model/Station.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/view/CreateStationWindow.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/view/mainwindow.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/view/CreateStationWindow.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/view/mainwindow.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/controller/StationController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/controller/StationController.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/config/Connection.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/config/Configuration.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/config/Configuration.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/config/Connection.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
