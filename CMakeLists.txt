@@ -21,6 +21,6 @@ set(CMAKE_MODULE_PATH  ${PROJECT_SOURCE_DIR}/cmake-extensions/ )
 
 link_directories(${MONGO_LIBRARY_DIRS})
 
-set(SOURCE_FILES main.cpp TextFileProcessor.cpp TextFileProcessor.h mainwindow.cpp model/Sensor.cpp model/Sensor.h model/Station.cpp model/Station.h controller/StationController.cpp controller/StationController.cpp controller/StationController.h)
+set(SOURCE_FILES main.cpp TextFileProcessor.cpp TextFileProcessor.h mainwindow.cpp model/Sensor.cpp model/Sensor.h model/Station.cpp model/Station.h controller/StationController.cpp controller/StationController.cpp controller/StationController.h config/models.cpp config/models.h)
 add_executable(weather-backend-app ${SOURCE_FILES})
 target_link_libraries(weather-backend-app ${MONGO_LIBRARIES} Qt5::Widgets)
