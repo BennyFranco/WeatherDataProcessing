@@ -1,22 +1,23 @@
 #include <qfiledialog.h>
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include "controller/StationController.h"
-#include "config/Configuration.h"
+#include "ui_CreateStationWindow.h"
+#include "CreateStationWindow.h"
+#include "../config/Connection.h"
+#include "../controller/StationController.h"
+#include "../config/Configuration.h"
 
-MainWindow::MainWindow(QWidget *parent) :
+CreateStationWindow::CreateStationWindow(QWidget *parent) :
         QMainWindow(parent),
-        ui(new Ui::MainWindow)
+        ui(new Ui::CreateStationWindow)
 {
     ui->setupUi(this);
 }
 
-MainWindow::~MainWindow()
+CreateStationWindow::~CreateStationWindow()
 {
     delete ui;
 }
 
-void MainWindow::on_btnSave_clicked()
+void CreateStationWindow::on_btnSave_clicked()
 {
     std::string uiMongoURI = ui->txtMongoUri->toPlainText().toStdString();
     std::string uiDatabase = ui->txtDatabaseName->toPlainText().toStdString();
@@ -34,7 +35,7 @@ void MainWindow::on_btnSave_clicked()
     printf("info saved\n");
 }
 
-void MainWindow::on_btnOpenFile_clicked()
+void CreateStationWindow::on_btnOpenFile_clicked()
 {
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"), QString(),
                                                     tr("Text Files (*.txt)"));

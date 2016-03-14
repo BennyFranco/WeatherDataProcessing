@@ -1,10 +1,10 @@
-#include "mainwindow.h"
+#include "view/CreateStationWindow.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
+    CreateStationWindow w;
     w.show();
 
     return a.exec();

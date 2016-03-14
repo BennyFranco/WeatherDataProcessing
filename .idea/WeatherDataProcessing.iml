@@ -15,12 +15,12 @@
     </content>
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/mainwindow.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/model/Sensor.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/model/Sensor.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/model/Station.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/model/Station.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/mainwindow.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/view/CreateStationWindow.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/view/CreateStationWindow.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/controller/StationController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/controller/StationController.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/config/Connection.cpp" isTestSource="false" />
