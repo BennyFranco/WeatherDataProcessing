@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.3)
-project(WeatherDataProcessing)
+project(weather-backend-app)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_PREFIX_PATH /Users/Benny/qt/5.5/clang_64/lib/cmake)
@@ -21,6 +21,6 @@ set(CMAKE_MODULE_PATH  ${PROJECT_SOURCE_DIR}/cmake-extensions/ )
 
 link_directories(${MONGO_LIBRARY_DIRS})
 
-set(SOURCE_FILES main.cpp TextFileProcessor.cpp TextFileProcessor.h mainwindow.cpp)
-add_executable(WeatherDataProcessing ${SOURCE_FILES})
-target_link_libraries(WeatherDataProcessing ${MONGO_LIBRARIES} Qt5::Widgets)
+set(SOURCE_FILES main.cpp TextFileProcessor.cpp TextFileProcessor.h mainwindow.cpp model/Sensor.cpp model/Sensor.h model/Station.cpp model/Station.h)
+add_executable(weather-backend-app ${SOURCE_FILES})
+target_link_libraries(weather-backend-app ${MONGO_LIBRARIES} Qt5::Widgets)

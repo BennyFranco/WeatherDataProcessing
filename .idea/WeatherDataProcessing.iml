@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
+    <content url="file://$USER_HOME$/Library/Caches/CLion12/cmake/generated/a28680dd/a28680dd/Debug/weather-backend-app_automoc.cpp">
+      <sourceFolder url="file://$USER_HOME$/Library/Caches/CLion12/cmake/generated/a28680dd/a28680dd/Debug/weather-backend-app_automoc.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/Library/Caches/CLion12/cmake/generated/a28680dd/a28680dd/MinSizeRel/weather-backend-app_automoc.cpp">
+      <sourceFolder url="file://$USER_HOME$/Library/Caches/CLion12/cmake/generated/a28680dd/a28680dd/MinSizeRel/weather-backend-app_automoc.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/Library/Caches/CLion12/cmake/generated/a28680dd/a28680dd/RelWithDebInfo/weather-backend-app_automoc.cpp">
+      <sourceFolder url="file://$USER_HOME$/Library/Caches/CLion12/cmake/generated/a28680dd/a28680dd/RelWithDebInfo/weather-backend-app_automoc.cpp" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/Library/Caches/CLion12/cmake/generated/a28680dd/a28680dd/Release/weather-backend-app_automoc.cpp">
+      <sourceFolder url="file://$USER_HOME$/Library/Caches/CLion12/cmake/generated/a28680dd/a28680dd/Release/weather-backend-app_automoc.cpp" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/mainwindow.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/TextFileProcessor.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TextFileProcessor.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/model/Sensor.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/model/Sensor.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/model/Station.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/model/Station.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TextFileProcessor.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/mainwindow.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/mainwindow.h" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/build" />
-    </content>
-    <content url="file://$USER_HOME$/Library/Caches/CLion12/cmake/generated/fbcc2cac/fbcc2cac/Debug/WeatherDataProcessing_automoc.cpp">
-      <sourceFolder url="file://$USER_HOME$/Library/Caches/CLion12/cmake/generated/fbcc2cac/fbcc2cac/Debug/WeatherDataProcessing_automoc.cpp" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/Library/Caches/CLion12/cmake/generated/fbcc2cac/fbcc2cac/MinSizeRel/WeatherDataProcessing_automoc.cpp">
-      <sourceFolder url="file://$USER_HOME$/Library/Caches/CLion12/cmake/generated/fbcc2cac/fbcc2cac/MinSizeRel/WeatherDataProcessing_automoc.cpp" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/Library/Caches/CLion12/cmake/generated/fbcc2cac/fbcc2cac/RelWithDebInfo/WeatherDataProcessing_automoc.cpp">
-      <sourceFolder url="file://$USER_HOME$/Library/Caches/CLion12/cmake/generated/fbcc2cac/fbcc2cac/RelWithDebInfo/WeatherDataProcessing_automoc.cpp" isTestSource="false" />
-    </content>
-    <content url="file://$USER_HOME$/Library/Caches/CLion12/cmake/generated/fbcc2cac/fbcc2cac/Release/WeatherDataProcessing_automoc.cpp">
-      <sourceFolder url="file://$USER_HOME$/Library/Caches/CLion12/cmake/generated/fbcc2cac/fbcc2cac/Release/WeatherDataProcessing_automoc.cpp" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
