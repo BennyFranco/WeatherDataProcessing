@@ -4,12 +4,12 @@
 #include <QMainWindow>
 
 namespace Ui {
-class MainWindow;
+    class MainWindow;
 }
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+Q_OBJECT
 
 public:
     explicit MainWindow(QWidget *parent = 0);
@@ -17,6 +17,7 @@ public:
 
 private slots:
     void on_btnSave_clicked();
+    void on_btnOpenFile_clicked();
 
 private:
     Ui::MainWindow *ui;

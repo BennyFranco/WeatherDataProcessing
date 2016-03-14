@@ -22,12 +22,15 @@
       <sourceFolder url="file://$MODULE_DIR$/model/Station.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/model/Station.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TextFileProcessor.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/mainwindow.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/controller/StationController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/controller/StationController.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/mainwindow.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/config/Connection.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/config/models.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/config/models.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/config/Connection.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/build" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

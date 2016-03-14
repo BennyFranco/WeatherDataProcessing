@@ -30,12 +30,13 @@ public:
     QPlainTextEdit *txtCollectionName;
     QPlainTextEdit *txtFileName;
     QPushButton *btnSave;
+    QPushButton *btnOpenFile;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(400, 222);
+        MainWindow->resize(540, 222);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         txtMongoUri = new QPlainTextEdit(centralWidget);
@@ -53,6 +54,9 @@ public:
         btnSave = new QPushButton(centralWidget);
         btnSave->setObjectName(QStringLiteral("btnSave"));
         btnSave->setGeometry(QRect(140, 180, 113, 32));
+        btnOpenFile = new QPushButton(centralWidget);
+        btnOpenFile->setObjectName(QStringLiteral("btnOpenFile"));
+        btnOpenFile->setGeometry(QRect(400, 130, 113, 32));
         MainWindow->setCentralWidget(centralWidget);
 
         retranslateUi(MainWindow);
@@ -67,7 +71,13 @@ public:
         txtDatabaseName->setPlaceholderText(QApplication::translate("MainWindow", "Database Name", 0));
         txtCollectionName->setPlaceholderText(QApplication::translate("MainWindow", "Collection Name", 0));
         txtFileName->setPlaceholderText(QApplication::translate("MainWindow", "File name with path", 0));
+
+        txtMongoUri->setPlainText(QApplication::translate("MainWindow", "mongodb://127.0.0.1/ClimaPIEAES?", 0));
+        txtDatabaseName->setPlainText(QApplication::translate("MainWindow", "ClimaPIEAES", 0));
+        txtCollectionName->setPlainText(QApplication::translate("MainWindow", "JAZMIN", 0));
+
         btnSave->setText(QApplication::translate("MainWindow", "Save Info", 0));
+        btnOpenFile->setText(QApplication::translate("MainWindow", "Open File", 0));
     } // retranslateUi
 
 };

@@ -7,12 +7,13 @@
 
 
 #include "../model/Station.h"
+#include "../config/Connection.h"
 
 class StationController {
 
 public:
     StationController() { }
-    void create(Station station);
+    int create(Connection con);
     void update(Station station);
     void destroy(Station station);
     Station find(Station station);
