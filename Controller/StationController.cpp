@@ -25,18 +25,17 @@ int StationController::create(Connection con) {
     mongocxx::instance inst{};
     mongocxx::client conn{mongocxx::uri{con.getMongoURI()}};
 
-    auto collection = conn[con.getDatabase()][con.getCollectionName()];
-    std::string headerLine;
-    bool isFirstLine=true;
-
     std::vector<std::string> headersVector;
     std::vector<std::string> dataLineVector;
-
     std::vector<std::string>::const_iterator j;
     std::vector<std::string>::const_iterator k;
 
+    std::string headerLine;
+
     std::ifstream inFile(con.getFileName());
 
+    auto collection = conn[con.getDatabase()][con.getCollectionName()];
+    bool isFirstLine=true;
 
     if (!inFile) {
         std::cerr << "File not found." << std::endl;
@@ -91,7 +90,7 @@ int StationController::create(Connection con) {
 
         for(std::size_t i=0;i<dataTempVector.size();++i){
             if(i==0){
-                document << headersVector[i] << dataTempVector[i];
+                document << "name" << con.getCollectionName() << headersVector[i] << dataTempVector[i];
                 document << "sensores" << open_document;
             }else{
                 Sensor *sensor = new Sensor(dataTempVector[i],headersVector[i]);

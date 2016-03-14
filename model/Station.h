@@ -14,6 +14,7 @@ private:
     std::string id;
     std::string name;
     std::string dateTime;
+    std::string fileName;
     std::vector<Sensor> sensores;
 
 public:
@@ -21,12 +22,15 @@ public:
 
     Station(const std::string &id, const std::string &name, const std::string &dateTime) : id(id), name(name),
                                                                                            dateTime(dateTime) { }
-
-
     Station(const std::string &id, const std::string &name, const std::string &dateTime,
             const std::vector<Sensor> &sensores) : id(id), name(name), dateTime(dateTime), sensores(sensores) { }
 
-
+    Station(const std::string &name, const std::string &fileName) : name(name), fileName(fileName) { }
+    Station(const std::string &name, const std::string &fileName, const std::vector<Sensor> &sensores) : name(name),
+                                                                                                         fileName(
+                                                                                                                 fileName),
+                                                                                                         sensores(
+                                                                                                                 sensores) { }
     const std::string &getId() const {
         return id;
     }
@@ -57,6 +61,14 @@ public:
 
     void setSensores(const std::vector<Sensor> &sensores) {
         Station::sensores = sensores;
+    }
+
+    const std::string &getFileName() const {
+        return fileName;
+    }
+
+    void setFileName(const std::string &fileName) {
+        Station::fileName = fileName;
     }
 };
 

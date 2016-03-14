@@ -1,8 +1,8 @@
 #include <qfiledialog.h>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "TextFileProcessor.h"
 #include "controller/StationController.h"
+#include "config/Configuration.h"
 
 MainWindow::MainWindow(QWidget *parent) :
         QMainWindow(parent),
@@ -18,19 +18,20 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btnSave_clicked()
 {
-    string uiMongoURI = ui->txtMongoUri->toPlainText().toStdString();
-    string uiDatabase = ui->txtDatabaseName->toPlainText().toStdString();
-    string uiCollectionName = ui->txtCollectionName->toPlainText().toStdString();
-    string uiFileName = ui->txtFileName->toPlainText().toStdString();
+    std::string uiMongoURI = ui->txtMongoUri->toPlainText().toStdString();
+    std::string uiDatabase = ui->txtDatabaseName->toPlainText().toStdString();
+    std::string uiCollectionName = ui->txtCollectionName->toPlainText().toStdString();
+    std::string uiFileName = ui->txtFileName->toPlainText().toStdString();
 
-    /*TextFileProcessor *transform = new TextFileProcessor(uiMongoURI,uiDatabase,uiCollectionName,uiFileName);
-    transform->transformTextFile();*/
+    Connection *connection = new Connection(uiMongoURI,uiDatabase,uiCollectionName,uiFileName);
 
     StationController *stationController = new StationController();
+    stationController->create(*connection);
 
-    stationController->create(*new Connection(uiMongoURI,uiDatabase,uiCollectionName,uiFileName));
+    Configuration *configuration = new Configuration();
+    configuration->create(*connection);
 
-    printf("info saved");
+    printf("info saved\n");
 }
 
 void MainWindow::on_btnOpenFile_clicked()
