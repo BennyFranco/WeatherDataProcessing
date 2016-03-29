@@ -22,6 +22,7 @@ public:
 
 public slots:
     void on_actionCrear_triggered();
+    void on_itemClicked();
 
 private:
     Ui::MainWindow *ui;

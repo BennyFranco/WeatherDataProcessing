@@ -86,6 +86,7 @@ public:
 
         retranslateUi(MainWindow);
         QObject::connect(actionCrear, SIGNAL(triggered()), MainWindow, SLOT(on_actionCrear_triggered()));
+        QObject::connect(listWidget, SIGNAL(itemClicked(QListWidgetItem*)), MainWindow, SLOT(on_itemClicked()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
