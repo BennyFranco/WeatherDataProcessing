@@ -3,8 +3,8 @@
 //
 
 #include <qfiledialog.h>
-#include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "mainwindow.h"
 #include "CreateStationWindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :

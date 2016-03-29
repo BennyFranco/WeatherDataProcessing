@@ -118,22 +118,5 @@
   </action>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>actionCrear</sender>
-   <signal>triggered()</signal>
-   <receiver>actionCrear</receiver>
-   <slot>trigger()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>299</x>
-     <y>251</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>299</x>
-     <y>252</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

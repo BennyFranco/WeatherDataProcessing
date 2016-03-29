@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'mainwindowd37760.ui'
+** Form generated from reading UI file 'mainwindowK34179.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef MAINWINDOWD37760_H
-#define MAINWINDOWD37760_H
+#ifndef MAINWINDOWK34179_H
+#define MAINWINDOWK34179_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -23,6 +23,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
+#include "mainwindow.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -40,6 +41,7 @@ public:
     QMenuBar *menubar;
     QMenu *menuEstaciones;
     QStatusBar *statusbar;
+
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -83,7 +85,7 @@ public:
         menuEstaciones->addAction(actionCrear);
 
         retranslateUi(MainWindow);
-        QObject::connect(actionCrear, SIGNAL(triggered()), actionCrear, SLOT(on_actionCrear_triggered()));
+        QObject::connect(actionCrear, SIGNAL(triggered()), MainWindow, SLOT(on_actionCrear_triggered()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -101,6 +103,8 @@ public:
         menuEstaciones->setTitle(QApplication::translate("MainWindow", "Estaciones", 0));
     } // retranslateUi
 
+public slots:
+    void on_actionCrear_triggered();
 };
 
 namespace Ui {
@@ -109,4 +113,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // MAINWINDOWD37760_H
+#endif // MAINWINDOWK34179_H
