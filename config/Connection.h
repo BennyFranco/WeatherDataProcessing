@@ -10,48 +10,48 @@
 class Connection {
 
 private:
-    std::string mongoURI;
-    std::string database;
-    std::string collectionName;
-    std::string fileName;
+    std::string _mongoURI;
+    std::string _database;
+    std::string _collectionName;
+    std::string _fileName;
 
 
 public:
     Connection() { }
     Connection(const std::string &mongoURI, const std::string &database, const std::string &collectionName,
-               const std::string &fileName) : mongoURI(mongoURI), database(database), collectionName(collectionName),
-                                              fileName(fileName) { }
+               const std::string &fileName) : _mongoURI(mongoURI), _database(database), _collectionName(collectionName),
+                                              _fileName(fileName) { }
 
     const std::string &getMongoURI() const {
-        return mongoURI;
+        return _mongoURI;
     }
 
     void setMongoURI(const std::string &mongoURI) {
-        Connection::mongoURI = mongoURI;
+        Connection::_mongoURI = mongoURI;
     }
 
     const std::string &getDatabase() const {
-        return database;
+        return _database;
     }
 
     void setDatabase(const std::string &database) {
-        Connection::database = database;
+        Connection::_database = database;
     }
 
     const std::string &getCollectionName() const {
-        return collectionName;
+        return _collectionName;
     }
 
     void setCollectionName(const std::string &collectionName) {
-        Connection::collectionName = collectionName;
+        Connection::_collectionName = collectionName;
     }
 
     const std::string &getFileName() const {
-        return fileName;
+        return _fileName;
     }
 
     void setFileName(const std::string &fileName) {
-        Connection::fileName = fileName;
+        Connection::_fileName = fileName;
     }
 };
 

@@ -11,64 +11,64 @@
 
 class Station {
 private:
-    std::string id;
-    std::string name;
-    std::string dateTime;
-    std::string fileName;
-    std::vector<Sensor> sensores;
+    std::string _id;
+    std::string _name;
+    std::string _dateTime;
+    std::string _fileName;
+    std::vector<Sensor> _sensores;
 
 public:
     Station() { }
 
-    Station(const std::string &id, const std::string &name, const std::string &dateTime) : id(id), name(name),
-                                                                                           dateTime(dateTime) { }
+    Station(const std::string &id, const std::string &name, const std::string &dateTime) : _id(id), _name(name),
+                                                                                           _dateTime(dateTime) { }
     Station(const std::string &id, const std::string &name, const std::string &dateTime,
-            const std::vector<Sensor> &sensores) : id(id), name(name), dateTime(dateTime), sensores(sensores) { }
+            const std::vector<Sensor> &sensores) : _id(id), _name(name), _dateTime(dateTime), _sensores(sensores) { }
 
-    Station(const std::string &name, const std::string &fileName) : name(name), fileName(fileName) { }
-    Station(const std::string &name, const std::string &fileName, const std::vector<Sensor> &sensores) : name(name),
-                                                                                                         fileName(
+    Station(const std::string &name, const std::string &fileName) : _name(name), _fileName(fileName) { }
+    Station(const std::string &name, const std::string &fileName, const std::vector<Sensor> &sensores) : _name(name),
+                                                                                                         _fileName(
                                                                                                                  fileName),
-                                                                                                         sensores(
+                                                                                                         _sensores(
                                                                                                                  sensores) { }
     const std::string &getId() const {
-        return id;
+        return _id;
     }
 
     void setId(const std::string &id) {
-        Station::id = id;
+        Station::_id = id;
     }
 
     const std::string &getName() const {
-        return name;
+        return _name;
     }
 
     void setName(const std::string &name) {
-        Station::name = name;
+        Station::_name = name;
     }
 
     const std::string &getDateTime() const {
-        return dateTime;
+        return _dateTime;
     }
 
     void setDateTime(const std::string &dateTime) {
-        Station::dateTime = dateTime;
+        Station::_dateTime = dateTime;
     }
 
     const std::vector<Sensor> &getSensores() const {
-        return sensores;
+        return _sensores;
     }
 
     void setSensores(const std::vector<Sensor> &sensores) {
-        Station::sensores = sensores;
+        Station::_sensores = sensores;
     }
 
     const std::string &getFileName() const {
-        return fileName;
+        return _fileName;
     }
 
     void setFileName(const std::string &fileName) {
-        Station::fileName = fileName;
+        Station::_fileName = fileName;
     }
 };
 

@@ -10,38 +10,38 @@
 class Sensor {
 
 private:
-    std::string name;
-    std::string value;
-    std::string units;
+    std::string _name;
+    std::string _value;
+    std::string _units;
 
 public:
     Sensor() { }
-    Sensor(const std::string &value, const std::string &name) : value(value), name(name) { }
-    Sensor(const std::string &name, const std::string &vale, const std::string &units) : name(name), value(vale),
-                                                                                         units(units) { }
+    Sensor(const std::string &value, const std::string &name) : _value(value), _name(name) { }
+    Sensor(const std::string &name, const std::string &vale, const std::string &units) : _name(name), _value(vale),
+                                                                                         _units(units) { }
 
     const std::string &getName() const {
-        return name;
+        return _name;
     }
 
     void setName(const std::string &name) {
-        Sensor::name = name;
+        Sensor::_name = name;
     }
 
     const std::string &getValue() const {
-        return value;
+        return _value;
     }
 
     void setValue(const std::string &value) {
-        Sensor::value = value;
+        Sensor::_value = value;
     }
 
     const std::string &getUnits() const {
-        return units;
+        return _units;
     }
 
     void setUnits(const std::string &units) {
-        Sensor::units = units;
+        Sensor::_units = units;
     }
 };
 
