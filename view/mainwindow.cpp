@@ -48,7 +48,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
         bsoncxx::document::element name_ele{doc["name"]};
         if (name_ele) {
-            std::string d = bsoncxx::to_json(name_ele.get_value());
+            std::string d = bsoncxx::to_json(name_ele.get_document());
             // this block will only execute if "store" was found in the document
             std::replace(d.begin(), d.end(), '"', ' ');
             d.erase( std::remove_if( d.begin(), d.end(), ::isspace ), d.end() );
@@ -94,15 +94,15 @@ void MainWindow::on_itemClicked() {
         bsoncxx::document::element name_ele{doc["name"]};
         if (name_ele) {
             // this block will only execute if "store" was found in the document
-            std::cout << bsoncxx::to_json(name_ele.get_value()) << std::endl;
-            ui->lblName->setText(("Name: " + bsoncxx::to_json(name_ele.get_value())).data());
+            std::cout << bsoncxx::to_json(name_ele.get_document()) << std::endl;
+            ui->lblName->setText(("Name: " + bsoncxx::to_json(name_ele.get_document())).data());
         }
 
         bsoncxx::document::element fileURI_ele{doc["fileURI"]};
         if (fileURI_ele) {
             // this block will only execute if "store" was found in the document
-            std::cout << bsoncxx::to_json(fileURI_ele.get_value()) << std::endl;
-            ui->lblFileURI->setText(("URI: " + bsoncxx::to_json(fileURI_ele.get_value())).data());
+            std::cout << bsoncxx::to_json(fileURI_ele.get_document()) << std::endl;
+            ui->lblFileURI->setText(("URI: " + bsoncxx::to_json(fileURI_ele.get_document())).data());
         }
     }
 

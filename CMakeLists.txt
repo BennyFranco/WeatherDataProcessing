@@ -2,14 +2,13 @@ cmake_minimum_required(VERSION 3.3)
 project(weather-backend-app)
 
 set(CMAKE_AUTOMOC ON)
-set(CMAKE_PREFIX_PATH /Users/Benny/qt/5.5/clang_64/lib/cmake)
+set(CMAKE_PREFIX_PATH /Users/bennyfranco/qt/5.7/clang_64/lib/cmake)
 
 find_package(PkgConfig REQUIRED)
-
 PKG_SEARCH_MODULE(MONGO libmongocxx)
 find_package(Qt5Widgets)
 
-include_directories(${MONGO_INCLUDE_DIRS} ${MONGO_LIBRARY_DIRS})
+include_directories(${MONGO_INCLUDE_DIRS} ${MONGO_LIBRARY_DIRS} /usr/local/include/mongocxx/v_noabi/mongocxx /usr/local/include/bsoncxx/v_noabi/bsoncxx)
 
 set(MONGO_USE_STATIC_LIBS        ON)
 set(MONGO_USE_MULTITHREADED      ON)
