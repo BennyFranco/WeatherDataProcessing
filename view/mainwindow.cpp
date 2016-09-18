@@ -15,7 +15,6 @@
 #include <mongocxx/client.hpp>
 #include <mongocxx/instance.hpp>
 #include <QTextStream>
-#include <algorithm>
 
 
 using bsoncxx::builder::stream::document;
@@ -43,24 +42,14 @@ MainWindow::MainWindow(QWidget *parent) :
 
     auto cursor = collection.find({});
 
-    for (auto&& doc : cursor) {
-        std::cout << bsoncxx::to_json(doc) << std::endl;
+    ui->setupUi(this);
 
+    for (auto&& doc : cursor) {
         bsoncxx::document::element name_ele{doc["name"]};
         if (name_ele) {
-            std::string d = bsoncxx::to_json(name_ele.get_document());
-            // this block will only execute if "store" was found in the document
-            std::replace(d.begin(), d.end(), '"', ' ');
-            d.erase( std::remove_if( d.begin(), d.end(), ::isspace ), d.end() );
-            std::cout << d << std::endl;
-            s.push_back(d);
+            std::string itemToAdd = name_ele.get_utf8().value.to_string();
+            ui->listWidget->addItem(itemToAdd.data());
         }
-    }
-
-    ui->setupUi(this);
-    for(j=s.begin(); j!=s.end(); ++j){
-        std::string temp = (*j);
-        ui->listWidget->addItem(temp.data());
     }
 }
 
@@ -87,25 +76,15 @@ void MainWindow::on_itemClicked() {
     auto collection = conn[connection->getDatabase()]["Configurations"];
 
     auto cursor = collection.find({document{} << "name" << s.toStdString() << finalize});
-
     for (auto&& doc : cursor) {
-        std::cout << bsoncxx::to_json(doc) << std::endl;
-
         bsoncxx::document::element name_ele{doc["name"]};
         if (name_ele) {
-            // this block will only execute if "store" was found in the document
-            std::cout << bsoncxx::to_json(name_ele.get_document()) << std::endl;
-            ui->lblName->setText(("Name: " + bsoncxx::to_json(name_ele.get_document())).data());
+            ui->lblName->setText(name_ele.get_utf8().value.to_string().data());
         }
 
         bsoncxx::document::element fileURI_ele{doc["fileURI"]};
         if (fileURI_ele) {
-            // this block will only execute if "store" was found in the document
-            std::cout << bsoncxx::to_json(fileURI_ele.get_document()) << std::endl;
-            ui->lblFileURI->setText(("URI: " + bsoncxx::to_json(fileURI_ele.get_document())).data());
+            ui->lblFileURI->setText(fileURI_ele.get_utf8().value.to_string().data());
         }
     }
-
-
-
 }
