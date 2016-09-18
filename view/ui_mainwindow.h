@@ -63,7 +63,14 @@ public:
         lblName->setGeometry(QRect(10, 30, 311, 20));
         lblFileURI = new QLabel(groupDetails);
         lblFileURI->setObjectName(QStringLiteral("lblFileURI"));
-        lblFileURI->setGeometry(QRect(10, 60, 311, 16));
+        lblFileURI->setGeometry(QRect(10, 60, 311, 71));
+        lblFileURI->setMaximumSize(QSize(311, 71));
+        lblFileURI->setTextFormat(Qt::AutoText);
+        lblFileURI->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        lblFileURI->setWordWrap(true);
+        lblFileURI->setMargin(1);
+        lblFileURI->setIndent(0);
+        lblFileURI->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(260, 430, 113, 32));
@@ -106,6 +113,7 @@ public:
 
 public slots:
     void on_actionCrear_triggered();
+    void on_itemClicked();
 };
 
 namespace Ui {
