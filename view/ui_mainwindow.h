@@ -6,8 +6,8 @@
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef MAINWINDOWK34179_H
-#define MAINWINDOWK34179_H
+#ifndef UI_MAINWINDOW_H
+#define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -20,10 +20,9 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
-#include "mainwindow.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -36,8 +35,10 @@ public:
     QGroupBox *groupDetails;
     QLabel *lblName;
     QLabel *lblFileURI;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QGroupBox *optionsGroup;
+    QToolButton *addStationButton;
+    QToolButton *editStationButton;
+    QToolButton *deleteStationButton;
     QMenuBar *menubar;
     QMenu *menuEstaciones;
     QStatusBar *statusbar;
@@ -47,17 +48,17 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(599, 504);
+        MainWindow->resize(709, 504);
         actionCrear = new QAction(MainWindow);
         actionCrear->setObjectName(QStringLiteral("actionCrear"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         listWidget = new QListWidget(centralwidget);
         listWidget->setObjectName(QStringLiteral("listWidget"));
-        listWidget->setGeometry(QRect(0, 0, 256, 461));
+        listWidget->setGeometry(QRect(100, 0, 256, 461));
         groupDetails = new QGroupBox(centralwidget);
         groupDetails->setObjectName(QStringLiteral("groupDetails"));
-        groupDetails->setGeometry(QRect(260, 0, 331, 431));
+        groupDetails->setGeometry(QRect(370, 0, 331, 461));
         lblName = new QLabel(groupDetails);
         lblName->setObjectName(QStringLiteral("lblName"));
         lblName->setGeometry(QRect(10, 30, 311, 20));
@@ -71,16 +72,25 @@ public:
         lblFileURI->setMargin(1);
         lblFileURI->setIndent(0);
         lblFileURI->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(260, 430, 113, 32));
-        pushButton_2 = new QPushButton(centralwidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(370, 430, 113, 32));
+        optionsGroup = new QGroupBox(centralwidget);
+        optionsGroup->setObjectName(QStringLiteral("optionsGroup"));
+        optionsGroup->setGeometry(QRect(10, 0, 81, 461));
+        addStationButton = new QToolButton(optionsGroup);
+        addStationButton->setObjectName(QStringLiteral("addStationButton"));
+        addStationButton->setGeometry(QRect(10, 30, 61, 61));
+        addStationButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        editStationButton = new QToolButton(optionsGroup);
+        editStationButton->setObjectName(QStringLiteral("editStationButton"));
+        editStationButton->setGeometry(QRect(10, 100, 61, 61));
+        editStationButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        deleteStationButton = new QToolButton(optionsGroup);
+        deleteStationButton->setObjectName(QStringLiteral("deleteStationButton"));
+        deleteStationButton->setGeometry(QRect(10, 170, 61, 61));
+        deleteStationButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 599, 22));
+        menubar->setGeometry(QRect(0, 0, 709, 22));
         menuEstaciones = new QMenu(menubar);
         menuEstaciones->setObjectName(QStringLiteral("menuEstaciones"));
         MainWindow->setMenuBar(menubar);
@@ -94,6 +104,7 @@ public:
         retranslateUi(MainWindow);
         QObject::connect(actionCrear, SIGNAL(triggered()), MainWindow, SLOT(on_actionCrear_triggered()));
         QObject::connect(listWidget, SIGNAL(itemClicked(QListWidgetItem*)), MainWindow, SLOT(on_itemClicked()));
+        QObject::connect(addStationButton,SIGNAL(clicked()), MainWindow, SLOT(on_actionCrear_triggered()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -106,8 +117,10 @@ public:
         groupDetails->setTitle(QApplication::translate("MainWindow", "Detalles", 0));
         lblName->setText(QApplication::translate("MainWindow", "Name: ", 0));
         lblFileURI->setText(QApplication::translate("MainWindow", "URI:", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "PushButton", 0));
-        pushButton_2->setText(QApplication::translate("MainWindow", "PushButton", 0));
+        optionsGroup->setTitle(QApplication::translate("MainWindow", "Opciones", 0));
+        addStationButton->setText(QApplication::translate("MainWindow", "A\303\261adir", 0));
+        editStationButton->setText(QApplication::translate("MainWindow", "Editar", 0));
+        deleteStationButton->setText(QApplication::translate("MainWindow", "Eliminar", 0));
         menuEstaciones->setTitle(QApplication::translate("MainWindow", "Estaciones", 0));
     } // retranslateUi
 
