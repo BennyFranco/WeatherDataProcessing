@@ -26,8 +26,6 @@ class Ui_CreateStationWindow
 {
 public:
     QWidget *centralWidget;
-    QPlainTextEdit *txtMongoUri;
-    QPlainTextEdit *txtDatabaseName;
     QPlainTextEdit *txtCollectionName;
     QPushButton *btnSave;
     QPushButton *btnOpenFile;
@@ -37,27 +35,21 @@ public:
     {
         if (CreateStationWindow->objectName().isEmpty())
             CreateStationWindow->setObjectName(QStringLiteral("CreateStationWindow"));
-        CreateStationWindow->resize(540, 222);
+        CreateStationWindow->resize(512, 140);
         centralWidget = new QWidget(CreateStationWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        txtMongoUri = new QPlainTextEdit(centralWidget);
-        txtMongoUri->setObjectName(QStringLiteral("txtMongoUri"));
-        txtMongoUri->setGeometry(QRect(10, 10, 381, 31));
-        txtDatabaseName = new QPlainTextEdit(centralWidget);
-        txtDatabaseName->setObjectName(QStringLiteral("txtDatabaseName"));
-        txtDatabaseName->setGeometry(QRect(10, 50, 381, 31));
         txtCollectionName = new QPlainTextEdit(centralWidget);
         txtCollectionName->setObjectName(QStringLiteral("txtCollectionName"));
-        txtCollectionName->setGeometry(QRect(10, 90, 381, 31));
+        txtCollectionName->setGeometry(QRect(10, 10, 381, 31));
         btnSave = new QPushButton(centralWidget);
         btnSave->setObjectName(QStringLiteral("btnSave"));
-        btnSave->setGeometry(QRect(140, 180, 113, 32));
+        btnSave->setGeometry(QRect(140, 100, 113, 32));
         btnOpenFile = new QPushButton(centralWidget);
         btnOpenFile->setObjectName(QStringLiteral("btnOpenFile"));
-        btnOpenFile->setGeometry(QRect(400, 130, 113, 32));
+        btnOpenFile->setGeometry(QRect(400, 50, 113, 32));
         txtFileName = new QTextEdit(centralWidget);
         txtFileName->setObjectName(QStringLiteral("txtFileName"));
-        txtFileName->setGeometry(QRect(10, 130, 381, 31));
+        txtFileName->setGeometry(QRect(10, 50, 381, 31));
         CreateStationWindow->setCentralWidget(centralWidget);
 
         retranslateUi(CreateStationWindow);
@@ -68,9 +60,6 @@ public:
     void retranslateUi(QMainWindow *CreateStationWindow)
     {
         CreateStationWindow->setWindowTitle(QApplication::translate("CreateStationWindow", "Create Station", 0));
-        txtMongoUri->setPlainText(QString());
-        txtMongoUri->setPlaceholderText(QApplication::translate("CreateStationWindow", "MongoURI", 0));
-        txtDatabaseName->setPlaceholderText(QApplication::translate("CreateStationWindow", "Database Name", 0));
         txtCollectionName->setPlaceholderText(QApplication::translate("CreateStationWindow", "Collection Name", 0));
         btnSave->setText(QApplication::translate("CreateStationWindow", "Save Info", 0));
         btnOpenFile->setText(QApplication::translate("CreateStationWindow", "Open File", 0));

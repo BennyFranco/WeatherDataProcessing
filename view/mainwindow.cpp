@@ -8,12 +8,13 @@
 #include "CreateStationWindow.h"
 #include "adjustWindow.h"
 #include "../config/Connection.h"
-#include <iostream>
+#include "../include/json.hpp"
+#include <fstream>
 
 #include <bsoncxx/builder/stream/document.hpp>
-
 #include <mongocxx/client.hpp>
 #include <mongocxx/instance.hpp>
+
 #include <QTextStream>
 #include <QMessageBox>
 
@@ -25,6 +26,10 @@ using bsoncxx::builder::stream::open_array;
 using bsoncxx::builder::stream::close_array;
 using bsoncxx::builder::stream::finalize;
 
+using JSON = nlohmann::json;
+
+std::string mongoURI;
+std::string dataBase;
 
 MainWindow::MainWindow(QWidget *parent) :
         QMainWindow(parent),
@@ -36,7 +41,27 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
 
-    Connection *connection = new Connection("mongodb://127.0.0.1/","ClimaPIEAES","Configurations","");
+    // Read Config File
+    std::string line;
+    std::ifstream configFile ("config.json");
+
+    JSON jsonConfigFile;
+
+    if (configFile.is_open())
+    {
+        while ( getline (configFile,line) )
+        {
+            jsonConfigFile = JSON::parse(line);
+        }
+        configFile.close();
+    }
+
+    else std::cout << "Unable to open file";
+
+    mongoURI = jsonConfigFile["mongoURI"];
+    dataBase = jsonConfigFile["database"];
+
+    Connection *connection = new Connection(mongoURI,dataBase,"Configurations","");
 
     mongocxx::instance inst{};
     mongocxx::client conn{mongocxx::uri{connection->getMongoURI()}};
@@ -44,7 +69,6 @@ MainWindow::MainWindow(QWidget *parent) :
     try {
 
         auto collection = conn[connection->getDatabase()][connection->getCollectionName()];
-
         auto cursor = collection.find({});
 
         for (auto &&doc : cursor) {
@@ -54,8 +78,7 @@ MainWindow::MainWindow(QWidget *parent) :
                 ui->listWidget->addItem(itemToAdd.data());
             }
         }
-    } catch(std::exception& e)
-    {
+    } catch(std::exception& e) {
         QMessageBox Msgbox;
         Msgbox.setText("Test Failed: No existe una instancia de MongoDB ejecutandose, revisa tu configuración");
         Msgbox.exec();
@@ -75,16 +98,15 @@ void MainWindow::on_actionCrear_triggered()
 
 void MainWindow::on_itemClicked() {
     const QString& s = ui->listWidget->currentItem()->text();
-    std::cout << s.toStdString() << std::endl;
 
-    Connection *connection = new Connection("mongodb://127.0.0.1/","ClimaPIEAES",s.toStdString(),"");
+    Connection *connection = new Connection(mongoURI,dataBase,s.toStdString(),"");
 
     mongocxx::instance inst{};
     mongocxx::client conn{mongocxx::uri{connection->getMongoURI()}};
 
     auto collection = conn[connection->getDatabase()]["Configurations"];
-
     auto cursor = collection.find({document{} << "name" << s.toStdString() << finalize});
+
     for (auto&& doc : cursor) {
         bsoncxx::document::element name_ele{doc["name"]};
         if (name_ele) {

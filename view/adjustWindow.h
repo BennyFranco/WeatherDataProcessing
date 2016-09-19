@@ -22,6 +22,7 @@ public:
 
 public slots:
     void on_testButton_Clicked();
+    void accept();
 
 private:
     Ui::adjustWindow *ui;
