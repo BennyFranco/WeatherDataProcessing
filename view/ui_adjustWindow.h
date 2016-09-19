@@ -32,7 +32,7 @@ public:
     QLabel *dataBaseLabel;
     QLabel *collectionLabel;
     QLineEdit *collectionLineEdit;
-    QPushButton *textButton;
+    QPushButton *testButton;
 
     void setupUi(QDialog *adjustWindow)
     {
@@ -59,13 +59,14 @@ public:
         collectionLineEdit = new QLineEdit(adjustGroup);
         collectionLineEdit->setObjectName(QStringLiteral("collectionLineEdit"));
         collectionLineEdit->setGeometry(QRect(10, 110, 261, 31));
-        textButton = new QPushButton(adjustWindow);
-        textButton->setObjectName(QStringLiteral("textButton"));
-        textButton->setGeometry(QRect(300, 110, 81, 32));
+        testButton = new QPushButton(adjustWindow);
+        testButton->setObjectName(QStringLiteral("testButton"));
+        testButton->setGeometry(QRect(300, 110, 81, 32));
 
         retranslateUi(adjustWindow);
         QObject::connect(acceptButtons, SIGNAL(accepted()), adjustWindow, SLOT(accept()));
         QObject::connect(acceptButtons, SIGNAL(rejected()), adjustWindow, SLOT(reject()));
+        QObject::connect(testButton,SIGNAL(clicked()), adjustWindow, SLOT(on_testButton_Clicked()));
 
         QMetaObject::connectSlotsByName(adjustWindow);
     } // setupUi
@@ -80,7 +81,7 @@ public:
         collectionLabel->setText(QApplication::translate("adjustWindow", "Colecci\303\263n", 0));
         collectionLineEdit->setText(QApplication::translate("adjustWindow", "ClimaPIEAES", 0));
         collectionLineEdit->setPlaceholderText(QApplication::translate("adjustWindow", "Collection Name", 0));
-        textButton->setText(QApplication::translate("adjustWindow", "Probar", 0));
+        testButton->setText(QApplication::translate("adjustWindow", "Probar", 0));
     } // retranslateUi
 
 };

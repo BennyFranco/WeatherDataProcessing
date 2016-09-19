@@ -15,6 +15,7 @@
 #include <mongocxx/client.hpp>
 #include <mongocxx/instance.hpp>
 #include <QTextStream>
+#include <QMessageBox>
 
 
 using bsoncxx::builder::stream::document;
@@ -33,23 +34,31 @@ MainWindow::MainWindow(QWidget *parent) :
     std::vector<std::string> s;
     std::vector<std::string>::const_iterator j;
 
+    ui->setupUi(this);
+
     Connection *connection = new Connection("mongodb://127.0.0.1/","ClimaPIEAES","Configurations","");
 
     mongocxx::instance inst{};
     mongocxx::client conn{mongocxx::uri{connection->getMongoURI()}};
 
-    auto collection = conn[connection->getDatabase()][connection->getCollectionName()];
+    try {
 
-    auto cursor = collection.find({});
+        auto collection = conn[connection->getDatabase()][connection->getCollectionName()];
 
-    ui->setupUi(this);
+        auto cursor = collection.find({});
 
-    for (auto&& doc : cursor) {
-        bsoncxx::document::element name_ele{doc["name"]};
-        if (name_ele) {
-            std::string itemToAdd = name_ele.get_utf8().value.to_string();
-            ui->listWidget->addItem(itemToAdd.data());
+        for (auto &&doc : cursor) {
+            bsoncxx::document::element name_ele{doc["name"]};
+            if (name_ele) {
+                std::string itemToAdd = name_ele.get_utf8().value.to_string();
+                ui->listWidget->addItem(itemToAdd.data());
+            }
         }
+    } catch(std::exception& e)
+    {
+        QMessageBox Msgbox;
+        Msgbox.setText("Test Failed: No existe una instancia de MongoDB ejecutandose, revisa tu configuración");
+        Msgbox.exec();
     }
 }
 
