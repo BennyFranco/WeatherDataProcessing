@@ -7,10 +7,12 @@
       <sourceFolder url="file://$MODULE_DIR$/model/Sensor.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/model/Station.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/model/Station.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/view/CreateStationWindow.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/view/mainwindow.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/view/CreateStationWindow.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/view/mainwindow.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/view/adjustWindow.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/view/adjustWindow.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/view/CreateStationWindow.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/view/CreateStationWindow.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/view/mainwindow.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Controller/StationController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Controller/StationController.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/config/Connection.cpp" isTestSource="false" />

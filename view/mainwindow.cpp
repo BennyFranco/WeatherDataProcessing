@@ -6,6 +6,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "CreateStationWindow.h"
+#include "adjustWindow.h"
 #include "../config/Connection.h"
 #include <iostream>
 
@@ -32,7 +33,7 @@ MainWindow::MainWindow(QWidget *parent) :
     std::vector<std::string> s;
     std::vector<std::string>::const_iterator j;
 
-    Connection *connection = new Connection("mongodb://127.0.0.1/ClimaPIEAES?","ClimaPIEAES","Configurations","");
+    Connection *connection = new Connection("mongodb://127.0.0.1/","ClimaPIEAES","Configurations","");
 
     mongocxx::instance inst{};
     mongocxx::client conn{mongocxx::uri{connection->getMongoURI()}};
@@ -67,7 +68,7 @@ void MainWindow::on_itemClicked() {
     const QString& s = ui->listWidget->currentItem()->text();
     std::cout << s.toStdString() << std::endl;
 
-    Connection *connection = new Connection("mongodb://127.0.0.1/ClimaPIEAES?","ClimaPIEAES",s.toStdString(),"");
+    Connection *connection = new Connection("mongodb://127.0.0.1/","ClimaPIEAES",s.toStdString(),"");
 
     mongocxx::instance inst{};
     mongocxx::client conn{mongocxx::uri{connection->getMongoURI()}};
@@ -86,4 +87,9 @@ void MainWindow::on_itemClicked() {
             ui->lblFileURI->setText(fileURI_ele.get_utf8().value.to_string().data());
         }
     }
+}
+
+void MainWindow::on_adjustButton_Clicked() {
+    adjustWindow adjustWindow(this);
+    adjustWindow.exec();
 }

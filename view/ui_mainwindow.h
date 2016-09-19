@@ -39,6 +39,7 @@ public:
     QToolButton *addStationButton;
     QToolButton *editStationButton;
     QToolButton *deleteStationButton;
+    QToolButton *configButton;
     QMenuBar *menubar;
     QMenu *menuEstaciones;
     QStatusBar *statusbar;
@@ -87,6 +88,10 @@ public:
         deleteStationButton->setObjectName(QStringLiteral("deleteStationButton"));
         deleteStationButton->setGeometry(QRect(10, 170, 61, 61));
         deleteStationButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+        configButton = new QToolButton(optionsGroup);
+        configButton->setObjectName(QStringLiteral("configButton"));
+        configButton->setGeometry(QRect(10, 240, 61, 61));
+        configButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
@@ -105,6 +110,7 @@ public:
         QObject::connect(actionCrear, SIGNAL(triggered()), MainWindow, SLOT(on_actionCrear_triggered()));
         QObject::connect(listWidget, SIGNAL(itemClicked(QListWidgetItem*)), MainWindow, SLOT(on_itemClicked()));
         QObject::connect(addStationButton,SIGNAL(clicked()), MainWindow, SLOT(on_actionCrear_triggered()));
+        QObject::connect(configButton,SIGNAL(clicked()), MainWindow, SLOT(on_adjustButton_Clicked()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -121,12 +127,14 @@ public:
         addStationButton->setText(QApplication::translate("MainWindow", "A\303\261adir", 0));
         editStationButton->setText(QApplication::translate("MainWindow", "Editar", 0));
         deleteStationButton->setText(QApplication::translate("MainWindow", "Eliminar", 0));
+        configButton->setText(QApplication::translate("MainWindow", "Ajustes", 0));
         menuEstaciones->setTitle(QApplication::translate("MainWindow", "Estaciones", 0));
     } // retranslateUi
 
 public slots:
     void on_actionCrear_triggered();
     void on_itemClicked();
+    void on_adjustButton_Clicked();
 };
 
 namespace Ui {
