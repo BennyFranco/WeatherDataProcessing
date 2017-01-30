@@ -1,0 +1,721 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		24E2E92F2CEC47EE9F8E3DAF /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 27CBFE4FB54D465088BBFA01 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				914C691F73F947C9A2441E59 /* CMake Rules */,
+			);
+			dependencies = (
+				2B9751FDE6A443ACAC84DC6F /* PBXTargetDependency */,
+				B934F10023914516AD5768CD /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		60BA2493E41B4BC5BAA88158 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B8E0E304448C49E1AE2CFDFA /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				3A68D744E8AB4A3FB730E464 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		B231A4BD1E3F27B2002C74CB /* Sensor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B231A4BB1E3F27B2002C74CB /* Sensor.cpp */; };
+		B231A4C01E3F27C3002C74CB /* Station.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B231A4BE1E3F27C3002C74CB /* Station.cpp */; };
+		B231A4C51E3F2BB8002C74CB /* ProcessingComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B231A4C31E3F2BB8002C74CB /* ProcessingComponent.cpp */; };
+		B231A4C81E3F2BEB002C74CB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B231A4C61E3F2BEB002C74CB /* README.md */; };
+		E2D5F50970944D02B9E5DEF7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECD5529CFF3749828C3326D8 /* main.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		204585FAF5AF4807A1641FFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E0E190E307741DA8CD03FA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60BA2493E41B4BC5BAA88158;
+			remoteInfo = ZERO_CHECK;
+		};
+		49648B5E228949C2B3E132AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E0E190E307741DA8CD03FA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60BA2493E41B4BC5BAA88158;
+			remoteInfo = ZERO_CHECK;
+		};
+		87239F14AE8C495984C85AFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E0E190E307741DA8CD03FA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A0216D8BE8B40B1BD5CEB33;
+			remoteInfo = "bin/weather-processor";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6B73B0483409405E87D778B3 /* bin/weather-processor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "bin/weather-processor"; sourceTree = BUILT_PRODUCTS_DIR; };
+		717837FBE8F44EDF99985B36 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		9DCB306AFC6D425CA58C67AB /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		B231A4BB1E3F27B2002C74CB /* Sensor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Sensor.cpp; path = src/entities/Sensor.cpp; sourceTree = "<group>"; };
+		B231A4BC1E3F27B2002C74CB /* Sensor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Sensor.hpp; path = src/entities/Sensor.hpp; sourceTree = "<group>"; };
+		B231A4BE1E3F27C3002C74CB /* Station.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Station.cpp; path = src/entities/Station.cpp; sourceTree = "<group>"; };
+		B231A4BF1E3F27C3002C74CB /* Station.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Station.hpp; path = src/entities/Station.hpp; sourceTree = "<group>"; };
+		B231A4C11E3F29ED002C74CB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		B231A4C31E3F2BB8002C74CB /* ProcessingComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ProcessingComponent.cpp; path = src/components/ProcessingComponent.cpp; sourceTree = "<group>"; };
+		B231A4C41E3F2BB8002C74CB /* ProcessingComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ProcessingComponent.hpp; path = src/components/ProcessingComponent.hpp; sourceTree = "<group>"; };
+		B231A4C61E3F2BEB002C74CB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B231A4C71E3F2BEB002C74CB /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C6E3D1B632984FEBBA9DF454 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		ECD5529CFF3749828C3326D8 /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0200AC438F444ACCB5D75AC6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9852FDFD954742E7827453B2 /* bin */,
+				2AE7399687814CCEA043D600 /* ALL_BUILD */,
+				7737C352523F4119B7547E8E /* ZERO_CHECK */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		2AE7399687814CCEA043D600 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				98230CF130924CD2A87F4485 /* CMake Rules */,
+				717837FBE8F44EDF99985B36 /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		3E3B5DBB666744E7AACCC12D /* weather-processor */ = {
+			isa = PBXGroup;
+			children = (
+				CBECBC8B53244BF298380497 /* Source Files */,
+				C6E3D1B632984FEBBA9DF454 /* CMakeLists.txt */,
+			);
+			name = "weather-processor";
+			sourceTree = "<group>";
+		};
+		44FBF1EB54AD4AA19C875FD8 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		514F002678B140ECBBDCE96B = {
+			isa = PBXGroup;
+			children = (
+				B231A4C61E3F2BEB002C74CB /* README.md */,
+				B231A4C71E3F2BEB002C74CB /* LICENSE */,
+				B231A4C11E3F29ED002C74CB /* .gitignore */,
+				0200AC438F444ACCB5D75AC6 /* Sources */,
+				5C5EB9B7119747F686514858 /* Resources */,
+				869CAD67B520432BB116F0F0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5C5EB9B7119747F686514858 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7737C352523F4119B7547E8E /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				44FBF1EB54AD4AA19C875FD8 /* CMake Rules */,
+				9DCB306AFC6D425CA58C67AB /* CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		869CAD67B520432BB116F0F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B73B0483409405E87D778B3 /* bin/weather-processor */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		98230CF130924CD2A87F4485 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		9852FDFD954742E7827453B2 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				3E3B5DBB666744E7AACCC12D /* weather-processor */,
+			);
+			name = bin;
+			sourceTree = "<group>";
+		};
+		B231A4BA1E3F24EF002C74CB /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				B231A4BB1E3F27B2002C74CB /* Sensor.cpp */,
+				B231A4BC1E3F27B2002C74CB /* Sensor.hpp */,
+				B231A4BE1E3F27C3002C74CB /* Station.cpp */,
+				B231A4BF1E3F27C3002C74CB /* Station.hpp */,
+			);
+			name = entities;
+			sourceTree = "<group>";
+		};
+		B231A4C21E3F2B76002C74CB /* components */ = {
+			isa = PBXGroup;
+			children = (
+				B231A4C31E3F2BB8002C74CB /* ProcessingComponent.cpp */,
+				B231A4C41E3F2BB8002C74CB /* ProcessingComponent.hpp */,
+			);
+			name = components;
+			sourceTree = "<group>";
+		};
+		CBECBC8B53244BF298380497 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				B231A4C21E3F2B76002C74CB /* components */,
+				B231A4BA1E3F24EF002C74CB /* entities */,
+				ECD5529CFF3749828C3326D8 /* main.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A0216D8BE8B40B1BD5CEB33 /* bin/weather-processor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA2E88A4E9534600AC149A3D /* Build configuration list for PBXNativeTarget "bin/weather-processor" */;
+			buildPhases = (
+				1D06A0BF42034113B74C58AE /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF177C8BF2114A8890B3B0A7 /* PBXTargetDependency */,
+			);
+			name = "bin/weather-processor";
+			productName = "bin/weather-processor";
+			productReference = 6B73B0483409405E87D778B3 /* bin/weather-processor */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3E0E190E307741DA8CD03FA7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0810;
+			};
+			buildConfigurationList = B24C60B274124F19B209188C /* Build configuration list for PBXProject "weather-backend-app" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 514F002678B140ECBBDCE96B;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				24E2E92F2CEC47EE9F8E3DAF /* ALL_BUILD */,
+				60BA2493E41B4BC5BAA88158 /* ZERO_CHECK */,
+				9A0216D8BE8B40B1BD5CEB33 /* bin/weather-processor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A68D744E8AB4A3FB730E464 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/benny/tesis/weather-backend-app -f /Users/benny/tesis/weather-backend-app/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		914C691F73F947C9A2441E59 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/benny/tesis/weather-backend-app -f /Users/benny/tesis/weather-backend-app/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D06A0BF42034113B74C58AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B231A4C51E3F2BB8002C74CB /* ProcessingComponent.cpp in Sources */,
+				E2D5F50970944D02B9E5DEF7 /* main.cpp in Sources */,
+				B231A4C81E3F2BEB002C74CB /* README.md in Sources */,
+				B231A4C01E3F27C3002C74CB /* Station.cpp in Sources */,
+				B231A4BD1E3F27B2002C74CB /* Sensor.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2B9751FDE6A443ACAC84DC6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 60BA2493E41B4BC5BAA88158 /* ZERO_CHECK */;
+			targetProxy = 49648B5E228949C2B3E132AB /* PBXContainerItemProxy */;
+		};
+		AF177C8BF2114A8890B3B0A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 60BA2493E41B4BC5BAA88158 /* ZERO_CHECK */;
+			targetProxy = 204585FAF5AF4807A1641FFF /* PBXContainerItemProxy */;
+		};
+		B934F10023914516AD5768CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A0216D8BE8B40B1BD5CEB33 /* bin/weather-processor */;
+			targetProxy = 87239F14AE8C495984C85AFB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1C68EA10B3FB45C39AA2DB0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/benny/tesis/weather-backend-app";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		7F18EDAC22944D8E93A6BA89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/benny/tesis/weather-backend-app";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		8650007A0C654FC39AF37F09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/benny/tesis/weather-backend-app";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		8EEDC2C37E154287ACA97CFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "    ";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "bin/weather-processor";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/benny/tesis/weather-backend-app";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		9248C6EA2D9F4834AE2D269B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/benny/tesis/weather-backend-app";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		99F3F22A7AB24568B8E7D909 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "bin/weather-processor";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/benny/tesis/weather-backend-app";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		A2B70A7FD8194036A1109B00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = "/Users/benny/tesis/weather-backend-app/build";
+			};
+			name = Debug;
+		};
+		A420C0EC2BB04F9DB8C3FA6B /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "bin/weather-processor";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/benny/tesis/weather-backend-app";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		B28316D70C454EA8B21E81A4 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/benny/tesis/weather-backend-app";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		B4D67864F631429CB9AF203D /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = "/Users/benny/tesis/weather-backend-app/build";
+			};
+			name = RelWithDebInfo;
+		};
+		D155C7A5D3A34647AF9B58A5 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = "/Users/benny/tesis/weather-backend-app/build";
+			};
+			name = MinSizeRel;
+		};
+		D88A30C0EF8E4612B0C2422B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/benny/tesis/weather-backend-app";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		D93E4092944D469D8AF728D9 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "bin/weather-processor";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/benny/tesis/weather-backend-app";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		E273437A75C940BA90FDABB6 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/benny/tesis/weather-backend-app";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		EA427A900FE24E299BC0E402 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = "/Users/benny/tesis/weather-backend-app/build";
+			};
+			name = Release;
+		};
+		FDDD98C3494948F191ADA207 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/benny/tesis/weather-backend-app";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27CBFE4FB54D465088BBFA01 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D88A30C0EF8E4612B0C2422B /* Debug */,
+				1C68EA10B3FB45C39AA2DB0C /* Release */,
+				9248C6EA2D9F4834AE2D269B /* MinSizeRel */,
+				FDDD98C3494948F191ADA207 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B24C60B274124F19B209188C /* Build configuration list for PBXProject "weather-backend-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2B70A7FD8194036A1109B00 /* Debug */,
+				EA427A900FE24E299BC0E402 /* Release */,
+				D155C7A5D3A34647AF9B58A5 /* MinSizeRel */,
+				B4D67864F631429CB9AF203D /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B8E0E304448C49E1AE2CFDFA /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8650007A0C654FC39AF37F09 /* Debug */,
+				7F18EDAC22944D8E93A6BA89 /* Release */,
+				B28316D70C454EA8B21E81A4 /* MinSizeRel */,
+				E273437A75C940BA90FDABB6 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FA2E88A4E9534600AC149A3D /* Build configuration list for PBXNativeTarget "bin/weather-processor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EEDC2C37E154287ACA97CFF /* Debug */,
+				99F3F22A7AB24568B8E7D909 /* Release */,
+				D93E4092944D469D8AF728D9 /* MinSizeRel */,
+				A420C0EC2BB04F9DB8C3FA6B /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3E0E190E307741DA8CD03FA7 /* Project object */;
+}
