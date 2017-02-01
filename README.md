@@ -1,7 +1,5 @@
 # Weather Backend App
 
-[![Build Status](https://travis-ci.org/BennyFranco/weather-api-rest.svg?branch=master)](https://travis-ci.org/BennyFranco/weather-api-rest)
-
 This project is part of my Thesis named "Development of a software architecture for an agrometeorological network".
 The idea of this module is provide the rest api service to persist and get information from a NoSql data base, for my
 study case, we use MongoDB.
@@ -13,28 +11,14 @@ The objective of the Thesis is create an architectural model of software focused
 
 ### Requirements
 
-The project was created using the next tools:
-* SpringBoot Framework
-* Java
-* IntelliJ Idea like IDE
-* Maven
-* MongoDB
-
 ### Build
-
-* Run `./mvnw compile` to build the project. 
-* Run `./mvnw install`, this tells Maven to build all the modules, and to install it in the local repository. The local repository is created in your home directory (or alternative location that you created it), and is the location that all downloaded binaries and the projects you built are stored.
 
 ### Running unit tests
 
-* Run `./mvnw verify` to execute the unit tests.
-
 ### Development server
-* After compule run `java java -jar target/weather-api-rest-x.x.x-SNAPSHOT.jar` to execute the compiled jar
 
 ## Usage
 
-The project server is at http://localhost:8080 by default
 
 ## Contributing
 

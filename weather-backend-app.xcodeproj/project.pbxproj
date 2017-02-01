@@ -38,6 +38,9 @@
 		B231A4C01E3F27C3002C74CB /* Station.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B231A4BE1E3F27C3002C74CB /* Station.cpp */; };
 		B231A4C51E3F2BB8002C74CB /* ProcessingComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B231A4C31E3F2BB8002C74CB /* ProcessingComponent.cpp */; };
 		B231A4C81E3F2BEB002C74CB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B231A4C61E3F2BEB002C74CB /* README.md */; };
+		B2A4D2D01E41B5D400D9C8A1 /* TransformerComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2A4D2CE1E41B5D400D9C8A1 /* TransformerComponent.cpp */; };
+		B2A4D2D21E41B5FE00D9C8A1 /* DataTransformerInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2A4D2D11E41B5FE00D9C8A1 /* DataTransformerInterface.cpp */; };
+		B2A4D2D41E41B61900D9C8A1 /* DataProcessingInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2A4D2D31E41B61900D9C8A1 /* DataProcessingInterface.cpp */; };
 		E2D5F50970944D02B9E5DEF7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECD5529CFF3749828C3326D8 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -74,10 +77,14 @@
 		B231A4BE1E3F27C3002C74CB /* Station.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Station.cpp; path = src/entities/Station.cpp; sourceTree = "<group>"; };
 		B231A4BF1E3F27C3002C74CB /* Station.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Station.hpp; path = src/entities/Station.hpp; sourceTree = "<group>"; };
 		B231A4C11E3F29ED002C74CB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		B231A4C31E3F2BB8002C74CB /* ProcessingComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ProcessingComponent.cpp; path = src/components/ProcessingComponent.cpp; sourceTree = "<group>"; };
-		B231A4C41E3F2BB8002C74CB /* ProcessingComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ProcessingComponent.hpp; path = src/components/ProcessingComponent.hpp; sourceTree = "<group>"; };
+		B231A4C31E3F2BB8002C74CB /* ProcessingComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ProcessingComponent.cpp; path = "src/components/processing-component/ProcessingComponent.cpp"; sourceTree = "<group>"; };
+		B231A4C41E3F2BB8002C74CB /* ProcessingComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ProcessingComponent.hpp; path = "src/components/processing-component/ProcessingComponent.hpp"; sourceTree = "<group>"; };
 		B231A4C61E3F2BEB002C74CB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B231A4C71E3F2BEB002C74CB /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		B2A4D2CE1E41B5D400D9C8A1 /* TransformerComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TransformerComponent.cpp; path = "src/components/transformer-component/TransformerComponent.cpp"; sourceTree = "<group>"; };
+		B2A4D2CF1E41B5D400D9C8A1 /* TransformerComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TransformerComponent.hpp; path = "src/components/transformer-component/TransformerComponent.hpp"; sourceTree = "<group>"; };
+		B2A4D2D11E41B5FE00D9C8A1 /* DataTransformerInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DataTransformerInterface.cpp; path = "src/components/transformer-component/DataTransformerInterface.cpp"; sourceTree = "<group>"; };
+		B2A4D2D31E41B61900D9C8A1 /* DataProcessingInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DataProcessingInterface.cpp; path = "src/components/processing-component/DataProcessingInterface.cpp"; sourceTree = "<group>"; };
 		C6E3D1B632984FEBBA9DF454 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 		ECD5529CFF3749828C3326D8 /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -86,7 +93,7 @@
 		0200AC438F444ACCB5D75AC6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				9852FDFD954742E7827453B2 /* bin */,
+				3E3B5DBB666744E7AACCC12D /* weather-processor */,
 				2AE7399687814CCEA043D600 /* ALL_BUILD */,
 				7737C352523F4119B7547E8E /* ZERO_CHECK */,
 			);
@@ -161,15 +168,7 @@
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		9852FDFD954742E7827453B2 /* bin */ = {
-			isa = PBXGroup;
-			children = (
-				3E3B5DBB666744E7AACCC12D /* weather-processor */,
-			);
-			name = bin;
-			sourceTree = "<group>";
-		};
-		B231A4BA1E3F24EF002C74CB /* entities */ = {
+		B231A4BA1E3F24EF002C74CB /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				B231A4BB1E3F27B2002C74CB /* Sensor.cpp */,
@@ -177,23 +176,51 @@
 				B231A4BE1E3F27C3002C74CB /* Station.cpp */,
 				B231A4BF1E3F27C3002C74CB /* Station.hpp */,
 			);
-			name = entities;
+			name = Entities;
 			sourceTree = "<group>";
 		};
-		B231A4C21E3F2B76002C74CB /* components */ = {
+		B231A4C21E3F2B76002C74CB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B2A4D2CD1E41B50200D9C8A1 /* Transofrm Component */,
+				B2A4D2CB1E41B36200D9C8A1 /* Processing Component */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		B2A4D2CB1E41B36200D9C8A1 /* Processing Component */ = {
 			isa = PBXGroup;
 			children = (
 				B231A4C31E3F2BB8002C74CB /* ProcessingComponent.cpp */,
 				B231A4C41E3F2BB8002C74CB /* ProcessingComponent.hpp */,
+				B2A4D2D31E41B61900D9C8A1 /* DataProcessingInterface.cpp */,
 			);
-			name = components;
+			name = "Processing Component";
+			sourceTree = "<group>";
+		};
+		B2A4D2CD1E41B50200D9C8A1 /* Transofrm Component */ = {
+			isa = PBXGroup;
+			children = (
+				B2A4D2CE1E41B5D400D9C8A1 /* TransformerComponent.cpp */,
+				B2A4D2CF1E41B5D400D9C8A1 /* TransformerComponent.hpp */,
+				B2A4D2D11E41B5FE00D9C8A1 /* DataTransformerInterface.cpp */,
+			);
+			name = "Transofrm Component";
+			sourceTree = "<group>";
+		};
+		B2A4D2D51E41B63500D9C8A1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		CBECBC8B53244BF298380497 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
-				B231A4C21E3F2B76002C74CB /* components */,
-				B231A4BA1E3F24EF002C74CB /* entities */,
+				B2A4D2D51E41B63500D9C8A1 /* Controllers */,
+				B231A4C21E3F2B76002C74CB /* Components */,
+				B231A4BA1E3F24EF002C74CB /* Entities */,
 				ECD5529CFF3749828C3326D8 /* main.cpp */,
 			);
 			name = "Source Files";
@@ -277,9 +304,12 @@
 			files = (
 				B231A4C51E3F2BB8002C74CB /* ProcessingComponent.cpp in Sources */,
 				E2D5F50970944D02B9E5DEF7 /* main.cpp in Sources */,
+				B2A4D2D21E41B5FE00D9C8A1 /* DataTransformerInterface.cpp in Sources */,
 				B231A4C81E3F2BEB002C74CB /* README.md in Sources */,
+				B2A4D2D41E41B61900D9C8A1 /* DataProcessingInterface.cpp in Sources */,
 				B231A4C01E3F27C3002C74CB /* Station.cpp in Sources */,
 				B231A4BD1E3F27B2002C74CB /* Sensor.cpp in Sources */,
+				B2A4D2D01E41B5D400D9C8A1 /* TransformerComponent.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
