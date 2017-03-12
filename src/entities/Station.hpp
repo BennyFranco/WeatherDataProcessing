@@ -58,8 +58,8 @@ public:
         Station::_dateTime = dateTime;
     }
     
-    const std::vector<Sensor> &getSensores() const {
-        return _sensores;
+    const std::vector<Sensor> &getSensors() const {
+        return _sensors;
     }
     
     void setSensors(const std::vector<Sensor> &sensors) {
