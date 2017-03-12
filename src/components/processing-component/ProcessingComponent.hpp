@@ -9,6 +9,16 @@
 #ifndef ProcessingComponent_hpp
 #define ProcessingComponent_hpp
 
-#include <stdio.h>
+#include "../../entities/Station.hpp"
+#include "DataProcessingInterface.hpp"
+
+class ProcessingComponent: public DataProcessingInterface {
+public:
+    ProcessingComponent(){}
+    void readStationData();
+    
+private:
+    Station station;
+};
 
 #endif /* ProcessingComponent_hpp */

@@ -1,0 +1,5 @@
+[requires]
+cppunit/0.1@Coderdreams/testing
+
+[generators]
+cmake
