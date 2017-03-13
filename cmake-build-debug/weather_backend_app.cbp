@@ -130,8 +130,28 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/benny/Tesis/weather-backend-app/src/components/processing-component/DataProcessingInterface.hpp">
+			<Option target="weather_processor"/>
+			<Option target="weather_processor_tests"/>
+		</Unit>
+		<Unit filename="/Users/benny/Tesis/weather-backend-app/src/components/processing-component/ProcessingComponent.cpp">
+			<Option target="weather_processor"/>
+			<Option target="weather_processor_tests"/>
+		</Unit>
+		<Unit filename="/Users/benny/Tesis/weather-backend-app/src/components/processing-component/ProcessingComponent.hpp">
+			<Option target="weather_processor"/>
+			<Option target="weather_processor_tests"/>
+		</Unit>
 		<Unit filename="/Users/benny/Tesis/weather-backend-app/src/main.cpp">
 			<Option target="weather_processor"/>
+		</Unit>
+		<Unit filename="/Users/benny/Tesis/weather-backend-app/src/shared/Shared.cpp">
+			<Option target="weather_processor"/>
+			<Option target="weather_processor_tests"/>
+		</Unit>
+		<Unit filename="/Users/benny/Tesis/weather-backend-app/src/shared/Shared.h">
+			<Option target="weather_processor"/>
+			<Option target="weather_processor_tests"/>
 		</Unit>
 		<Unit filename="/Users/benny/Tesis/weather-backend-app/tests/components/processing-component/ProcessingComponentTests.cpp">
 			<Option target="weather_processor_tests"/>

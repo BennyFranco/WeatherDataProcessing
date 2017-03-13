@@ -9,13 +9,16 @@
 #ifndef DataProcessingInterface_hpp
 #define DataProcessingInterface_hpp
 
-class DataProcessingInterface
-{
+#include <iostream>
+#include <vector>
+
+#include "../../entities/Station.hpp"
+
+class DataProcessingInterface {
 public:
-    
-    virtual ~DataProcessingInterface() {}
-    
-    virtual void readStationData();
+    virtual std::vector<Station> readStationData(std::string stationName)= 0;
+
+    virtual ~DataProcessingInterface() {};
 };
 
 #endif /* DataProcessingInterface_h */

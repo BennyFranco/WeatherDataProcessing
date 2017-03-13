@@ -12,11 +12,11 @@
 class ProcessingComponentTests : public CPPUNIT_NS::TestFixture
 {
     CPPUNIT_TEST_SUITE( ProcessingComponentTests );
-    CPPUNIT_TEST( example );
+    CPPUNIT_TEST( read_station_data );
     CPPUNIT_TEST_SUITE_END();
 
 protected:
-    void example();
+    void read_station_data();
 
 };
 

@@ -12,13 +12,38 @@
 #include "../../entities/Station.hpp"
 #include "DataProcessingInterface.hpp"
 
-class ProcessingComponent: public DataProcessingInterface {
+class ProcessingComponent : public DataProcessingInterface {
+
 public:
-    ProcessingComponent(){}
-    void readStationData();
-    
+    ProcessingComponent() {}
+
+    ProcessingComponent(const std::string &fileURL) : fileURL(fileURL) {}
+
+
+    const Station &getStation() const {
+        return station;
+    }
+
+    void setStation(const Station &station) {
+        ProcessingComponent::station = station;
+    }
+
+    const std::string &getFileURL() const {
+        return fileURL;
+    }
+
+    void setFileURL(const std::string &fileURL) {
+        ProcessingComponent::fileURL = fileURL;
+    }
+
+    std::vector<Station> readStationData(std::string stationName) override;
+
 private:
     Station station;
+    std::string fileURL;
+
+    std::string readFileData(std::string fileName);
+    std::string readFileHeader(std::string fileName);
 };
 
 #endif /* ProcessingComponent_hpp */

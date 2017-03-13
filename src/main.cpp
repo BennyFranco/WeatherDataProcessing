@@ -1,6 +1,13 @@
 #include <iostream>
+#include "components/processing-component/DataProcessingInterface.hpp"
+#include "components/processing-component/ProcessingComponent.hpp"
 
 int main(int argc, char *argv[]){
-   std::cout << "Hello World!" << std::endl;
+
+   std::string fileURL = "../../test-data/Jazmin/20150201.txt";
+
+   DataProcessingInterface *dataProcessingInterface = new ProcessingComponent(fileURL);
+   std::vector<Station> stations = dataProcessingInterface->readStationData("Jazmin");
+
    return 0;
 }

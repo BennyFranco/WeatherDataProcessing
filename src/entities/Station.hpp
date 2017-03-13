@@ -26,14 +26,14 @@ public:
     Station(const std::string &id, const std::string &name, const std::string &dateTime) : _id(id), _name(name),
     _dateTime(dateTime) { }
     Station(const std::string &id, const std::string &name, const std::string &dateTime,
-            const std::vector<Sensor> &sensores) : _id(id), _name(name), _dateTime(dateTime), _sensores(sensores) { }
+            const std::vector<Sensor> &sensors) : _id(id), _name(name), _dateTime(dateTime), _sensors(sensors) { }
     
     Station(const std::string &name, const std::string &fileName) : _name(name), _fileName(fileName) { }
     Station(const std::string &name, const std::string &fileName, const std::vector<Sensor> &sensors) : _name(name),
     _fileName(
               fileName),
-    _sensores(
-              sensores) { }
+    _sensors(
+              sensors) { }
     const std::string &getId() const {
         return _id;
     }
