@@ -11,6 +11,14 @@ before_script:
     - curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python3
     - sudo pip install conan
     - ls
+    - sudo apt-get install build-essential
+    - wget http://www.cmake.org/files/v3.2/cmake-3.7.2.tar.gz
+    - tar xf cmake-3.7.2.tar.gz
+    - cd cmake-3.7.2
+    - ./configure
+    - make
+    - sudo make install
+    - cd ..
     - conan install . --build cppunit
     - mkdir build
     - cd build

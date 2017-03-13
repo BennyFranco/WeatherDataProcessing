@@ -4,7 +4,7 @@
 	<Project>
 		<Option title="weather_backend_app"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="clang"/>
+		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
@@ -22,7 +22,7 @@
 				<Option working_dir="/Users/benny/Tesis/weather-backend-app/cmake-build-debug/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="clang"/>
+				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/benny/.conan/data/cppunit/0.1/Coderdreams/testing/package/a47fd1f3db1f83c7cb0da8cea82a3e1683ae91ea/include"/>
 					<Add directory="/usr/local/include"/>
@@ -45,7 +45,7 @@
 				<Option working_dir="/Users/benny/Tesis/weather-backend-app/cmake-build-debug/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="clang"/>
+				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/benny/.conan/data/cppunit/0.1/Coderdreams/testing/package/a47fd1f3db1f83c7cb0da8cea82a3e1683ae91ea/include"/>
 					<Add directory="/usr/local/include"/>
@@ -88,7 +88,7 @@
 				<Option working_dir="/Users/benny/Tesis/weather-backend-app/cmake-build-debug/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="clang"/>
+				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/benny/.conan/data/cppunit/0.1/Coderdreams/testing/package/a47fd1f3db1f83c7cb0da8cea82a3e1683ae91ea/include"/>
 					<Add directory="/usr/local/include"/>
@@ -111,7 +111,7 @@
 				<Option working_dir="/Users/benny/Tesis/weather-backend-app/cmake-build-debug/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="clang"/>
+				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Users/benny/.conan/data/cppunit/0.1/Coderdreams/testing/package/a47fd1f3db1f83c7cb0da8cea82a3e1683ae91ea/include"/>
 					<Add directory="/usr/local/include"/>
