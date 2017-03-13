@@ -10,14 +10,17 @@
 #include "../../Shared/Shared.h"
 
 #include <fstream>
-#include <vector>
+#include <ctime>
 
 Station ProcessingComponent::readStationData(std::string stationName) {
     std::cout << "Reading station: " + stationName << std::endl;
 
 
-    std::vector<std::string> headers = processHeaders(this->m_fileURL);
-    std::vector<std::string> data = processData(this->m_fileURL);
+    std::vector<std::string> headers = processHeaders(this->m_file_url);
+    std::vector<std::string> data = processData(this->m_file_url);
+
+    createCopyOfDataFile();
+
     std::vector<Sensor> sensors;
 
     for (int i = 1; i < headers.size(); i++) {
@@ -90,4 +93,17 @@ std::vector<std::string> ProcessingComponent::processData(std::string fileURL) {
     std::string data = readFileData(fileURL);
 
     return Shared::split(data, ",");
+}
+
+void ProcessingComponent::createCopyOfDataFile() {
+    time_t now = time(0);
+    tm *localTime = localtime(&now);
+    std::string timeToConcat = std::to_string(1900 + localTime->tm_year) + "-" +
+                               std::to_string(1 + localTime->tm_mon) + "-" +
+                               std::to_string(localTime->tm_mday);
+
+    std::ifstream inFile(this->m_file_url);
+    std::ofstream outFile(this->m_file_url + ".bak" + timeToConcat);
+
+    outFile << inFile.rdbuf();
 }

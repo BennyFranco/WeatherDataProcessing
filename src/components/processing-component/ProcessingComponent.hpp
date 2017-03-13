@@ -17,7 +17,7 @@ class ProcessingComponent : public DataProcessingInterface {
 public:
     ProcessingComponent() {}
 
-    ProcessingComponent(const std::string &fileURL) : m_fileURL(fileURL) {}
+    ProcessingComponent(const std::string &fileURL) : m_file_url(fileURL) {}
 
 
     const Station &getStation() const {
@@ -29,23 +29,28 @@ public:
     }
 
     const std::string &getFileURL() const {
-        return m_fileURL;
+        return m_file_url;
     }
 
     void setFileURL(const std::string &fileURL) {
-        ProcessingComponent::m_fileURL = fileURL;
+        ProcessingComponent::m_file_url = fileURL;
     }
 
     Station readStationData(std::string stationName) override;
 
 private:
     Station m_station;
-    std::string m_fileURL;
+    std::string m_file_url;
 
     std::string readFileData(std::string fileName);
+
     std::string readFileHeader(std::string fileName);
+
     std::vector<std::string> processHeaders(std::string fileURL);
+
     std::vector<std::string> processData(std::string fileURL);
+
+    void createCopyOfDataFile();
 };
 
 #endif /* ProcessingComponent_hpp */
