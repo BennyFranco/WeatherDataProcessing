@@ -10,7 +10,6 @@ before_script:
     - sudo apt-get install python3
     - curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python3
     - sudo pip install conan
-    - sudo apt-get install cmake
     - ls
     - conan install . --build cppunit
     - mkdir build
