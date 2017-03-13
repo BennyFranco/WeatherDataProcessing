@@ -11,8 +11,7 @@ before_script:
     - curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python3
     - sudo pip install conan
     - ls
-    - cd weather-backend-app
-    - conan install .. --build cppunit
+    - conan install . --build cppunit
     - mkdir build
     - cd build
     - cmake ..
