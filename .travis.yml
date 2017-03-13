@@ -7,7 +7,8 @@ compiler:
 before_script:
     - sudo apt-get update
     - python -V
-    - sudo apt-get install -y python3-pip
+    - sudo apt-get install python3
+    - curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python3
     - pip install conan
     - conan install .. --build cppunit
     - mkdir build
