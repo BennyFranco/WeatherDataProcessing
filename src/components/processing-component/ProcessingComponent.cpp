@@ -11,7 +11,7 @@
 
 #include <fstream>
 
-Station ProcessingComponent::readStationData(std::string stationName) {
+std::vector<Station> ProcessingComponent::readStationData(std::string stationName) {
     std::cout << "Reading station: " + stationName << std::endl;
 
 
@@ -22,13 +22,16 @@ Station ProcessingComponent::readStationData(std::string stationName) {
 
     std::vector<Sensor> sensors;
 
-    for (int i = 1; i < headers.size(); i++) {
+    for (int i = 0; i < data.size(); i++) {
+        std::vector<std::string> line = processLine(data[i]);
+        for (int j = 1; j < headers.size(); j++) {
 
-        Sensor *sensor = new Sensor();
-        sensor->setName(headers[i]);
-        sensor->setValue(data[i]);
+            Sensor *sensor = new Sensor();
+            sensor->setName(headers[j]);
+            sensor->setValue(line[j]);
 
-        sensors.emplace_back(*sensor);
+            sensors.emplace_back(*sensor);
+        }
     }
 
     Station *station = new Station();
@@ -38,7 +41,7 @@ Station ProcessingComponent::readStationData(std::string stationName) {
 
     cleanDataFile();
 
-    return *station;
+    return std::vector<Station>();
 }
 
 std::string ProcessingComponent::readFileData(std::string fileName) {
@@ -93,7 +96,14 @@ std::vector<std::string> ProcessingComponent::processHeaders(std::string fileURL
 std::vector<std::string> ProcessingComponent::processData(std::string fileURL) {
     std::string data = readFileData(fileURL);
 
-    return Shared::split(data, ",");
+    return Shared::split(data, "\n");
+}
+
+std::vector<std::string> ProcessingComponent::processLine(std::string line) {
+
+    std::vector<std::string> data = Shared::split(line, ",");
+
+    return data;
 }
 
 void ProcessingComponent::createCopyOfDataFile() {

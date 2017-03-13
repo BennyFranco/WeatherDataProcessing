@@ -16,7 +16,7 @@
 
 class DataProcessingInterface {
 public:
-    virtual Station readStationData(std::string stationName)= 0;
+    virtual std::vector<Station> readStationData(std::string stationName)= 0;
 
     virtual ~DataProcessingInterface() {};
 };

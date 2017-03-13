@@ -36,7 +36,7 @@ public:
         ProcessingComponent::m_file_url = fileURL;
     }
 
-    Station readStationData(std::string stationName) override;
+    std::vector<Station> readStationData(std::string stationName) override;
 
 private:
     Station m_station;
@@ -49,6 +49,8 @@ private:
     std::vector<std::string> processHeaders(std::string fileURL);
 
     std::vector<std::string> processData(std::string fileURL);
+
+    std::vector<std::string> processLine(std::string line);
 
     void createCopyOfDataFile();
 

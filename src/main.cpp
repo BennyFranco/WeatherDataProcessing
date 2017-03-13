@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
     std::string fileURL = "../../test-data/Jazmin/20150201.txt";
 
     DataProcessingInterface *dataProcessingInterface = new ProcessingComponent(fileURL);
-    Station station = dataProcessingInterface->readStationData("Jazmin");
+    std::vector<Station> station = dataProcessingInterface->readStationData("Jazmin");
 
     return 0;
 }

@@ -22,6 +22,7 @@ before_script:
     - conan install . --build cppunit
     - mkdir build
     - cd build
-    - cmake ..
 
-script: make
+script:
+    - cmake ..
+    - ls
