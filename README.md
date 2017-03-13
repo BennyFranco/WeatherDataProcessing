@@ -1,5 +1,7 @@
 # Weather Backend App
 
+[![Build Status](https://travis-ci.org/BennyFranco/weather-backend-app.svg?branch=master)](https://travis-ci.org/BennyFranco/weather-backend-app)
+
 This project is part of my Thesis named "Development of a software architecture for an agrometeorological network".
 The idea of this module is process the information produced by meteorological stations and send to API for save it.
 
