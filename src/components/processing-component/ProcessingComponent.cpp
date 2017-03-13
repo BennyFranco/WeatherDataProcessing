@@ -8,21 +8,33 @@
 
 #include "ProcessingComponent.hpp"
 #include "../../Shared/Shared.h"
-#include <fstream>
 
-std::vector<Station> ProcessingComponent::readStationData(std::string stationName) {
+#include <fstream>
+#include <vector>
+
+Station ProcessingComponent::readStationData(std::string stationName) {
     std::cout << "Reading station: " + stationName << std::endl;
 
-    std::string headers = readFileHeader(this->fileURL);
-    std::string data = readFileData(this->fileURL);
 
-    std::vector<std::string> split_headers = Shared::split(headers, ",");
+    std::vector<std::string> headers = processHeaders(this->m_fileURL);
+    std::vector<std::string> data = processData(this->m_fileURL);
+    std::vector<Sensor> sensors;
 
-    for (int i = 0; i < split_headers.size(); i++) {
-        std::cout<<split_headers[i]<<std::endl;
+    for (int i = 1; i < headers.size(); i++) {
+
+        Sensor *sensor = new Sensor();
+        sensor->setName(headers[i]);
+        sensor->setValue(data[i]);
+
+        sensors.emplace_back(*sensor);
     }
 
-    return std::vector<Station>();
+    Station *station = new Station();
+    station->setName(stationName);
+    station->setDateTime(data[0]);
+    station->setSensors(sensors);
+
+    return *station;
 }
 
 std::string ProcessingComponent::readFileData(std::string fileName) {
@@ -41,8 +53,6 @@ std::string ProcessingComponent::readFileData(std::string fileName) {
         }
     }
 
-    // std::cout << file_contents << std::endl;
-
     return file_contents;
 }
 
@@ -56,9 +66,28 @@ std::string ProcessingComponent::readFileHeader(std::string fileName) {
     file_headers += str;
     file_headers.push_back('\n');
 
-
-    // std::cout << file_headers << std::endl;
-
     return file_headers;
 }
 
+std::vector<std::string> ProcessingComponent::processHeaders(std::string fileURL) {
+
+    std::string headers = readFileHeader(fileURL);
+    std::vector<std::string> split_headers = Shared::split(headers, ",");
+
+    split_headers[0] += split_headers[1];
+    std::replace(split_headers[0].begin(), split_headers[0].end(), '"', ' ');
+    split_headers[0].erase(std::remove_if(split_headers[0].begin(), split_headers[0].end(), isspace),
+                           split_headers[0].end());
+    split_headers[0] = "\"" + split_headers[0] + "\"";
+
+    split_headers.erase(split_headers.begin() + 1);
+
+
+    return split_headers;
+}
+
+std::vector<std::string> ProcessingComponent::processData(std::string fileURL) {
+    std::string data = readFileData(fileURL);
+
+    return Shared::split(data, ",");
+}
