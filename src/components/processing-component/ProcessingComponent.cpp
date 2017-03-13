@@ -10,7 +10,6 @@
 #include "../../Shared/Shared.h"
 
 #include <fstream>
-#include <ctime>
 
 Station ProcessingComponent::readStationData(std::string stationName) {
     std::cout << "Reading station: " + stationName << std::endl;
@@ -36,6 +35,8 @@ Station ProcessingComponent::readStationData(std::string stationName) {
     station->setName(stationName);
     station->setDateTime(data[0]);
     station->setSensors(sensors);
+
+    cleanDataFile();
 
     return *station;
 }
@@ -98,12 +99,21 @@ std::vector<std::string> ProcessingComponent::processData(std::string fileURL) {
 void ProcessingComponent::createCopyOfDataFile() {
     time_t now = time(0);
     tm *localTime = localtime(&now);
-    std::string timeToConcat = std::to_string(1900 + localTime->tm_year) + "-" +
-                               std::to_string(1 + localTime->tm_mon) + "-" +
-                               std::to_string(localTime->tm_mday);
+    std::string timeToConcat = std::to_string(1900 + localTime->tm_year) +
+                               std::to_string(1 + localTime->tm_mon) +
+                               std::to_string(localTime->tm_mday) + "T" +
+                               std::to_string(localTime->tm_hour) +
+                               std::to_string(localTime->tm_min);
 
     std::ifstream inFile(this->m_file_url);
     std::ofstream outFile(this->m_file_url + ".bak" + timeToConcat);
 
     outFile << inFile.rdbuf();
 }
+
+void ProcessingComponent::cleanDataFile() {
+    std::ofstream ofs;
+    ofs.open(this->m_file_url, std::ofstream::out | std::ofstream::trunc);
+    ofs.close();
+}
+

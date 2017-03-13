@@ -51,6 +51,8 @@ private:
     std::vector<std::string> processData(std::string fileURL);
 
     void createCopyOfDataFile();
+
+    void cleanDataFile();
 };
 
 #endif /* ProcessingComponent_hpp */
