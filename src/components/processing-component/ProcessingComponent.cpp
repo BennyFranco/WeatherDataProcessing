@@ -18,12 +18,19 @@ std::vector<Station> ProcessingComponent::readStationData(std::string stationNam
     std::vector<std::string> headers = processHeaders(this->m_file_url);
     std::vector<std::string> data = processData(this->m_file_url);
 
-    createCopyOfDataFile();
+    // createCopyOfDataFile();
 
     std::vector<Sensor> sensors;
+    std::vector<Station> stations;
+    Station *station;
 
     for (int i = 0; i < data.size(); i++) {
         std::vector<std::string> line = processLine(data[i]);
+        station = new Station();
+
+        station->setName(stationName);
+        station->setDateTime(line[0]);
+
         for (int j = 1; j < headers.size(); j++) {
 
             Sensor *sensor = new Sensor();
@@ -32,16 +39,14 @@ std::vector<Station> ProcessingComponent::readStationData(std::string stationNam
 
             sensors.emplace_back(*sensor);
         }
+
+        station->setSensors(sensors);
+        stations.emplace_back(*station);
     }
 
-    Station *station = new Station();
-    station->setName(stationName);
-    station->setDateTime(data[0]);
-    station->setSensors(sensors);
+    // cleanDataFile();
 
-    cleanDataFile();
-
-    return std::vector<Station>();
+    return stations;
 }
 
 std::string ProcessingComponent::readFileData(std::string fileName) {
