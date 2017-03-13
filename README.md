@@ -1,10 +1,12 @@
 # Weather Backend App
 
 This project is part of my Thesis named "Development of a software architecture for an agrometeorological network".
-The idea of this module is provide the rest api service to persist and get information from a NoSql data base, for my
-study case, we use MongoDB.
+The idea of this module is process the information produced by meteorological stations and send to API for save it.
 
-The objective of the Thesis is create an architectural model of software focused on the management of agrometeorological data that allows the scalability, that is to say, to add characteristics, climatic stations and maintenance, without the need to modify the established model, by applying software patterns, which together made the appropriate architectural model.
+The objective of the Thesis is create an architectural model of software focused on the management of agrometeorological d
+ata that allows the scalability, that is to say, to add characteristics,
+climatic stations and maintenance, without the need to modify the established model,
+by applying software patterns, which together made the appropriate architectural model.
 
 
 ## Installation
