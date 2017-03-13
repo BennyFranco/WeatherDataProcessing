@@ -1,0 +1,15 @@
+language: cpp
+
+compiler:
+    - gcc
+    - clang
+
+before_script:
+    - apt-get install -y python3-pip
+    - pip install conan
+    - conan install .. --build cppunit
+    - mkdir build
+    - cd build
+    - cmake ..
+
+script: make
