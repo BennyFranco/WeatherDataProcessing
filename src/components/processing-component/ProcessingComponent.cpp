@@ -20,13 +20,13 @@ std::vector<Station> ProcessingComponent::readStationData(std::string stationNam
 
     // createCopyOfDataFile();
 
-    std::vector<Sensor> sensors;
     std::vector<Station> stations;
-    Station *station;
 
-    for (int i = 0; i < data.size(); i++) {
-        std::vector<std::string> line = processLine(data[i]);
-        station = new Station();
+    for (auto &lineData : data) {
+        std::vector<std::string> line = processLine(lineData);
+
+        std::vector<Sensor> sensors;
+        Station *station = new Station();
 
         station->setName(stationName);
         station->setDateTime(line[0]);
